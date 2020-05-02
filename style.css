@@ -1,9 +1,9 @@
 :root {
-  --page-1-color: linear-gradient(to right, #CC95C0, #DBD4B4, #7AA1D2);
+  --page-1-color: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
   --page-2-color: linear-gradient(to right, #77A1D3, #79CBCA, #E684AE);
   --page-3-color: linear-gradient(to right, #5433FF, #20BDFF, #A5FECB);
   --page-4-color: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
-  --animate-speed: 1s;
+  --animate-speed: 2s;
 }
 
 body {
@@ -56,22 +56,23 @@ body {
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #f4f4f4;
-  color: #333;
+  background: transparent;
+  color: #fff;
   text-decoration: none;
-  border: none;
+  border: #fff 1px solid;
+  border-radius: 5px;
   margin-top: 1rem;
   font-size: 1.1rem;
   transition: all 0.3s ease-in;
 }
 
-.btn:hover,
-.btn-dark {
+.btn-outline-dark:hover {
   background: #333;
   color: #fff;
+  border: none;
 }
 
-.btn-dark:hover {
+.btn-outline-light:hover {
   background: #fff;
   color: #333;
 }
@@ -79,3 +80,37 @@ body {
 i {
   margin-left: 5px;
 }
+
+#page-1 h1 {
+  transform: translateY(-500px);
+  animation: animate-h1 var(--animate-speed) forwards ease-out;
+}
+
+#page-1 p {
+  transform: translateX(-2000px);
+  animation: animate-p var(--animate-speed) forwards ease-out 1s;
+}
+
+#page-1 a {
+  transform: translateY(500px);
+  animation: animate-a var(--animate-speed) forwards ease-out 2s;
+}
+
+@keyframes animate-h1 {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-p {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-a {
+  to {
+    transform: translateY(0);
+  }
+}
+
